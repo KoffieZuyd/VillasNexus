@@ -6,24 +6,29 @@ using System.Threading.Tasks;
 
 namespace Villas_Nexus.Models
 {
-    public class Vrijwilliger_Login
+    public class VrijwilligerLogin
     {
         public void Login()
         {
-            Console.Clear();
-
             string code = "VN2026";
 
-            Console.Write("Voer logincode in: ");
-            string invoer = Console.ReadLine();
+            while (true)
+            {
+                Console.Clear();
 
-            if (invoer == code)
-            {
-                ToonMenu();
-            }
-            else
-            {
-                Console.WriteLine("Ongeldige code.");
+                Console.Write("Voer logincode in: ");
+                string invoer = Console.ReadLine();
+
+                if (invoer == code)
+                {
+                    ToonMenu();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Ongeldige code, probeer opnieuw.");
+                    Console.ReadKey();
+                }
             }
         }
 
@@ -31,10 +36,25 @@ namespace Villas_Nexus.Models
         {
             Console.Clear();
 
+            Console.Write("\nMaak een keuze: ");
+            string keuze = Console.ReadLine();
+
+            switch (keuze)
+            {
+                case "1":
+                    Console.WriteLine("1. Werkzaamheden");
+                    break;
+
+                case "2":
+                    Console.WriteLine("2. Afgeronde werkzaamheden");
+                    break;
+
+                case "3":
+                    Console.WriteLine("3. Staff info");
+                    break;
+
+            }
             Console.WriteLine("=== Vrijwilliger Pagina ===");
-            Console.WriteLine("1. Werkzaamheden");
-            Console.WriteLine("2. Afgeronde werkzaamheden");
-            Console.WriteLine("3. Staff info");
         }
     }
 }
