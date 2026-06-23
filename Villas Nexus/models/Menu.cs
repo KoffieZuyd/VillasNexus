@@ -35,7 +35,8 @@ namespace Villas_Nexus.Models
                     break;
 
                 case "2":
-                    Console.WriteLine("Vrijwilliger geselecteerd.");
+                    Vrijwilliger_Login vrijwilliger = new Vrijwilliger_Login();
+                    vrijwilliger.Login();
                     break;
 
                 case "3":
