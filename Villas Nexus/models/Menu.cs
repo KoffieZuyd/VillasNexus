@@ -11,47 +11,24 @@ namespace Villas_Nexus.Models
     public class Menu
     {
 
-        public void ToonHoofdMenu()
+        protected void ToonTitel(string titel)
         {
-          
+            Console.Clear();
+            Console.WriteLine(titel);
             Console.WriteLine();
-
-            Console.WriteLine("1. Bezoeker");
-            Console.WriteLine("2. Vrijwilliger");
-            Console.WriteLine("3. Organisator");
-            Console.WriteLine("4. Foodtruck eigenaar");
-            Console.WriteLine();
-
-            Console.Write("Maak een keuze: ");
-            string keuze = Console.ReadLine();
-
-            VerwerkKeuze(keuze);
+            
+           
         }
 
-        private void VerwerkKeuze(string keuze)
+        public virtual void ToonMenu()
         {
-            switch (keuze)
-            {
-                case "1":
-                    Console.WriteLine("Bezoeker geselecteerd.");
-                    break;
 
-                case "2":
-                    Console.WriteLine("Vrijwilliger geselecteerd.");
-                    break;
+            Console.WriteLine("Menu");
 
-                case "3":
-                    Console.WriteLine("Organisator geselecteerd.");
-                    break;
+        }
 
-                case "4":
-                    Console.WriteLine("Foodtruck eigenaar geselecteerd.");
-                    break;
-
-                default:
-                    Console.WriteLine("Ongeldige keuze.");
-                    break;
-            }
+       
         }
     }
-}
+
+
