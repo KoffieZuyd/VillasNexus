@@ -26,37 +26,29 @@ namespace Villas_Nexus.Models
                    "██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║ \r\n" +
                    "╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ \r\n");
 
-                Console.WriteLine("1. Bezoeker");
-                Console.WriteLine("2. Vrijwilliger");
-                Console.WriteLine("3. Organisator");
-                Console.WriteLine("4. Foodtruck eigenaar");
+            switch (keuze)
+            {
+                case "1":
+                    Console.WriteLine("Bezoeker geselecteerd.");
+                    break;
 
-                Console.Write("\nMaak een keuze: ");
-                string keuze = Console.ReadLine();
+                case "2":
+                    VrijwilligerLogin vrijwilliger = new VrijwilligerLogin();
+                    vrijwilliger.Login();
+                    break;
 
-                switch (keuze)
-                {
-                    case "1":
-                        Console.WriteLine("Bezoeker geselecteerd.");
-                        break;
+                case "3":
+                    Menu organisatorMenu = new OrganisatorMenu();
+                    organisatorMenu.ToonMenu();
+                    break;
 
-                    case "2":
-                        Console.WriteLine("Vrijwilliger geselecteerd.");
-                        break;
+                case "4":
+                    Console.WriteLine("Foodtruck eigenaar geselecteerd.");
+                    break;
 
-                    case "3":
-                        Menu organisatorMenu = new OrganisatorMenu();
-                        organisatorMenu.ToonMenu();
-                        break;
-
-                    case "4":
-                        Console.WriteLine("Foodtruck eigenaar geselecteerd.");
-                        break;
-
-                    default:
-                        Console.WriteLine("Ongeldige keuze.");
-                        break;
-                }
+                default:
+                    Console.WriteLine("Ongeldige keuze.");
+                    break;
             }
      }
 }
