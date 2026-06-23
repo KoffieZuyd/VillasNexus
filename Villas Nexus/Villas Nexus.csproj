@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\HoofdMenu.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Vrijwilliger_Login.cs" />
+    <Compile Include="Models\OrganisatorMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
