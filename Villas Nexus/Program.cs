@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Villas_Nexus.Models;
 
 namespace Villas_Nexus
 {
@@ -24,6 +25,9 @@ namespace Villas_Nexus
                 "██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║╚════██║ \r\n" +
                 "██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║ \r\n" +
                 "╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ \r\n");
+
+            Menu menu = new Menu();
+            menu.ToonHoofdMenu();
         }
     }
 }
