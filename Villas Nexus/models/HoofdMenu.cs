@@ -26,6 +26,14 @@ namespace Villas_Nexus.Models
                    "██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║ \r\n" +
                    "╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ \r\n");
 
+                Console.WriteLine("1. Bezoeker");
+                Console.WriteLine("2. Vrijwilleger");
+                Console.WriteLine("3. Organsiator");
+                Console.WriteLine("4. Foodtruck Eigenaar");
+
+                Console.Write("\nMaak een keuze: ");
+                string keuze = Console.ReadLine();
+
             switch (keuze)
             {
                 case "1":
