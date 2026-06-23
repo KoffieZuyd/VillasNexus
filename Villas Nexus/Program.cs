@@ -26,8 +26,8 @@ namespace Villas_Nexus
                 "██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║ \r\n" +
                 "╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ \r\n");
 
-            Menu menu = new Menu();
-            menu.ToonHoofdMenu();
+            HoofdMenu menu = new HoofdMenu();
+            menu.ToonMenu();
         }
     }
 }
