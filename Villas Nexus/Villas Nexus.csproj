@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\db_connecter.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\TimeTable.cs" />
+    <Compile Include="Models\TimeTableRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
