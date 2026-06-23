@@ -9,6 +9,15 @@ namespace Villas_Nexus.Models
     public class Menu
     {
 
+        protected void ToonTitel(string titel)
+        {
+            Console.Clear();
+            Console.WriteLine(titel);
+            Console.WriteLine();
+            
+           
+        }
+
         public virtual void ToonMenu()
         {
 

@@ -10,7 +10,8 @@ namespace Villas_Nexus.Models
     {
         public override void ToonMenu()
         {
-            Console.Clear();
+            //Console.Clear();
+            ToonTitel("ORGANISATOR");
 
             Console.WriteLine("1. Terrein beheren");
             Console.WriteLine("2. Artiesten indelen op genre");
