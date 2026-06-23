@@ -9,38 +9,54 @@ namespace Villas_Nexus.Models
     public class HoofdMenu : Menu
     {
             public override void ToonMenu()
-        {
-            Console.WriteLine("1. Bezoeker");
-            Console.WriteLine("2. Vrijwilliger");
-            Console.WriteLine("3. Organisator");
-            Console.WriteLine("4. Foodtruck eigenaar");
-
-            Console.Write("\nMaak een keuze: ");
-            string keuze = Console.ReadLine();
-
-            switch (keuze)
             {
-                case "1":
-                    Console.WriteLine("Bezoeker geselecteerd.");
-                    break;
 
-                case "2":
-                    Console.WriteLine("Vrijwilliger geselecteerd.");
-                    break;
+                ToonTitel(
+                   "██╗   ██╗ █████╗ ██╗     ██╗     ██╗███████╗\r\n" +
+                   "██║   ██║██╔══██╗██║     ██║     ██║██╔════╝\r\n" +
+                   "██║   ██║███████║██║     ██║     ██║███████╗\r\n" +
+                   "╚██╗ ██╔╝██╔══██║██║     ██║     ██║╚════██║\r\n" +
+                   " ╚████╔╝ ██║  ██║███████╗███████╗██║███████║\r\n" +
+                   "  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚══════╝\r\n" +
+                   "                                            \r\n" +
+                   "███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗ \r\n" +
+                   "████╗  ██║██╔════╝╚██╗██╔╝██║   ██║██╔════╝ \r\n" +
+                   "██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║███████╗ \r\n" +
+                   "██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║╚════██║ \r\n" +
+                   "██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║ \r\n" +
+                   "╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ \r\n");
 
-                case "3":
-                    Menu organisatorMenu = new OrganisatorMenu();
-                    organisatorMenu.ToonMenu();
-                    break;
+                Console.WriteLine("1. Bezoeker");
+                Console.WriteLine("2. Vrijwilliger");
+                Console.WriteLine("3. Organisator");
+                Console.WriteLine("4. Foodtruck eigenaar");
 
-                case "4":
-                    Console.WriteLine("Foodtruck eigenaar geselecteerd.");
-                    break;
+                Console.Write("\nMaak een keuze: ");
+                string keuze = Console.ReadLine();
 
-                default:
-                    Console.WriteLine("Ongeldige keuze.");
-                    break;
+                switch (keuze)
+                {
+                    case "1":
+                        Console.WriteLine("Bezoeker geselecteerd.");
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Vrijwilliger geselecteerd.");
+                        break;
+
+                    case "3":
+                        Menu organisatorMenu = new OrganisatorMenu();
+                        organisatorMenu.ToonMenu();
+                        break;
+
+                    case "4":
+                        Console.WriteLine("Foodtruck eigenaar geselecteerd.");
+                        break;
+
+                    default:
+                        Console.WriteLine("Ongeldige keuze.");
+                        break;
+                }
             }
-        }
-    }
+     }
 }
