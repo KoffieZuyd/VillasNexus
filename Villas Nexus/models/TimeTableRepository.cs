@@ -19,7 +19,9 @@ namespace Villas_Nexus.Models
 
             public List<Timetable> HaalAlleOptredensOp()
             {
-                
+
+                return new List<Timetable>();
+
 
             }
 
@@ -30,6 +32,8 @@ namespace Villas_Nexus.Models
 
             public bool VerwijderOptreden(int id)
             {
+
+                return false;
 
             }
         }
