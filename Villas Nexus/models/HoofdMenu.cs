@@ -8,18 +8,18 @@ namespace Villas_Nexus.Models
 {
     public class HoofdMenu : Menu
     {
-            public override void ToonMenu()
-            {
+        public override void ToonMenu()
+        {
 
-                ToonTitel("MAIN MENU");
+            ToonTitel("MAIN MENU");
 
-                Console.WriteLine("1. Bezoeker");
-                Console.WriteLine("2. Vrijwilleger");
-                Console.WriteLine("3. Organsiator");
-                Console.WriteLine("4. Foodtruck Eigenaar");
+            Console.WriteLine("1. Bezoeker");
+            Console.WriteLine("2. Vrijwilleger");
+            Console.WriteLine("3. Organsiator");
+            Console.WriteLine("4. Foodtruck Eigenaar");
 
-                Console.Write("\nMaak een keuze: ");
-                string keuze = Console.ReadLine();
+            Console.Write("\nMaak een keuze: ");
+            string keuze = Console.ReadLine();
 
             switch (keuze)
             {
@@ -45,5 +45,6 @@ namespace Villas_Nexus.Models
                     Console.WriteLine("Ongeldige keuze.");
                     break;
             }
-     }
+        }
+    }
 }
