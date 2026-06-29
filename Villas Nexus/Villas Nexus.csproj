@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Artiest.cs" />
     <Compile Include="Models\DBConnecter.cs" />
+    <Compile Include="Models\GenreMenu.cs" />
     <Compile Include="Models\HoofdMenu.cs" />
     <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Models\TimeTableRepository.cs" />
     <Compile Include="Models\Vrijwilliger_Login.cs" />
