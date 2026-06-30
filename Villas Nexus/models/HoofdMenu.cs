@@ -11,7 +11,7 @@ namespace Villas_Nexus.Models
         public override void ToonMenu()
         {
 
-            ToonTitel("MAIN MENU");
+            ToonTitel("HOOFD MENU");
 
             Console.WriteLine("1. Bezoeker");
             Console.WriteLine("2. Vrijwilleger");
