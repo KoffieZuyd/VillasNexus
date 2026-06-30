@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\DBConnecter.cs" />
+    <Compile Include="DataAccess\DBConnecter.cs" />
     <Compile Include="Models\HoofdMenu.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\TimeTable.cs" />
