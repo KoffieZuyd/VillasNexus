@@ -15,46 +15,23 @@ namespace Villas_Nexus.Models
             while (true)
             {
                 Console.Clear();
+                Console.WriteLine("Vrijwilliger Login\n");
 
                 Console.Write("Voer logincode in: ");
                 string invoer = Console.ReadLine();
 
                 if (invoer == code)
                 {
-                    ToonMenu();
+                    VrijwilligerMenu menu = new VrijwilligerMenu();
+                    menu.ToonMenu();
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Ongeldige code, probeer opnieuw.");
+                    Console.WriteLine("Ongeldige code, druk spatie om opnieuw te proberen.");
                     Console.ReadKey();
                 }
             }
-        }
-
-        private void ToonMenu()
-        {
-            Console.Clear();
-
-            Console.Write("\nMaak een keuze: ");
-            string keuze = Console.ReadLine();
-
-            switch (keuze)
-            {
-                case "1":
-                    Console.WriteLine("1. Werkzaamheden");
-                    break;
-
-                case "2":
-                    Console.WriteLine("2. Afgeronde werkzaamheden");
-                    break;
-
-                case "3":
-                    Console.WriteLine("3. Staff info");
-                    break;
-
-            }
-            Console.WriteLine("=== Vrijwilliger Pagina ===");
         }
     }
 }
