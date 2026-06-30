@@ -24,7 +24,8 @@ namespace Villas_Nexus.Models
             switch (keuze)
             {
                 case "1":
-                    Console.WriteLine("Terrein beheren");
+                    Menu terreinMenu = new TerreinMenu();
+                    terreinMenu.ToonMenu();
                     break;
 
                 case "2":
