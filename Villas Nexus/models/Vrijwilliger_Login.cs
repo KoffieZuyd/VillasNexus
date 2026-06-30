@@ -12,7 +12,8 @@ namespace Villas_Nexus.Models
         {
             string code = "VN2026";
 
-            while (true)
+            bool isLoggedIn = false;
+            while (!isLoggedIn)
             {
                 Console.Clear();
                 Console.WriteLine("Vrijwilliger Login\n");
@@ -24,7 +25,7 @@ namespace Villas_Nexus.Models
                 {
                     VrijwilligerMenu menu = new VrijwilligerMenu();
                     menu.ToonMenu();
-                    break;
+                    isLoggedIn = true;
                 }
                 else
                 {
