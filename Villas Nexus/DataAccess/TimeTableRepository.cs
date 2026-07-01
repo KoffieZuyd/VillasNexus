@@ -1,33 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Villas_Nexus.Models;
 
 namespace Villas_Nexus.DataAcces
 {
-    public class TimetableRepository : IDisposable
+    public class TimetableRepository
     {
-        private DatabaseConnection databaseConnection;
-
-        public TimetableRepository()
-        {
-            databaseConnection = new DatabaseConnection();
-        }
-
         public List<Timetable> HaalAlleOptredensOp()
         {
             List<Timetable> timetableLijst = new List<Timetable>();
 
-            using (SqlConnection connection = databaseConnection.MaakVerbinding() as SqlConnection)
+            try
             {
-                connection.Open();
+                DatabaseConnection.MaakVerbinding();
 
                 string query = "SELECT * FROM timetable ORDER BY Dag, StartTijd";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -46,22 +36,26 @@ namespace Villas_Nexus.DataAcces
                     }
                 }
             }
+            finally
+            {
+                DatabaseConnection.SluitVerbinding();
+            }
 
             return timetableLijst;
         }
 
         public void VoegOptredenToe(Timetable timetable)
         {
-            using (SqlConnection connection = databaseConnection.MaakVerbinding() as SqlConnection)
+            try
             {
-                connection.Open();
+                DatabaseConnection.MaakVerbinding();
 
                 string query = @"INSERT INTO timetable 
                                 (Artiest, Dag, StartTijd, EindTijd, Podium, Plaats)
                                 VALUES 
                                 (@Artiest, @Dag, @StartTijd, @EindTijd, @Podium, @Plaats)";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
                 {
                     command.Parameters.AddWithValue("@Artiest", timetable.Artiest);
                     command.Parameters.AddWithValue("@Dag", timetable.Dag);
@@ -73,17 +67,21 @@ namespace Villas_Nexus.DataAcces
                     command.ExecuteNonQuery();
                 }
             }
+            finally
+            {
+                DatabaseConnection.SluitVerbinding();
+            }
         }
 
         public bool VerwijderOptreden(int id)
         {
-            using (SqlConnection connection = databaseConnection.MaakVerbinding() as SqlConnection)
+            try
             {
-                connection.Open();
+                DatabaseConnection.MaakVerbinding();
 
                 string query = "DELETE FROM timetable WHERE Id = @Id";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
                 {
                     command.Parameters.AddWithValue("@Id", id);
 
@@ -92,11 +90,10 @@ namespace Villas_Nexus.DataAcces
                     return rowsAffected > 0;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            databaseConnection?.Dispose();
+            finally
+            {
+                DatabaseConnection.SluitVerbinding();
+            }
         }
     }
 }
