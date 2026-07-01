@@ -52,7 +52,7 @@
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Models\VrijwilligerAfgerondeWerkzaamheden.cs" />
     <Compile Include="Models\VrijwilligerMenu.cs" />
-    <Compile Include="Models\TimeTableRepository.cs" />
+    <Compile Include="DataAccess\TimeTableRepository.cs" />
     <Compile Include="Models\VrijwilligerWerkzaamheden.cs" />
     <Compile Include="Models\VrijwilligerOpenstaandeWerkzaamheden.cs" />
     <Compile Include="Models\Vrijwilliger_Login.cs" />
