@@ -1,35 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Policy;
+using Villas_Nexus.DataAcces;
 
 namespace Villas_Nexus.Models
 {
     public class GenreMenu : Menu
     {
+       
+
         private List<Artiest> artiesten;
-        private Genre rock;
-        private Genre pop;
-        private Genre hiphop;
+        private List<Genre> genres;
+
+        private ArtiestRepository artiestRepository;
+        private GenreRepository genreRepository;
 
         public GenreMenu()
         {
-            artiesten = new List<Artiest>();
-
-
-            rock = new Genre(1, "Rock");
-            pop = new Genre(2, "Pop");
-            hiphop = new Genre(3, "HipHop");
-
-            artiesten.Add(new Artiest(1, "Imagine Dragons", "Rockband", new List<Genre> { rock } ));
-            artiesten.Add(new Artiest(2, "Eminem", "Rapper", new List<Genre> { hiphop } ));
-            artiesten.Add(new Artiest(3, "Coldplay", "Popband", new List<Genre> { pop }));
-
+            artiestRepository = new ArtiestRepository();
+            genreRepository = new GenreRepository();
             
+            artiesten = artiestRepository.HaalAlleArtiestenOp();
+            genres = genreRepository.HaalAlleGenresOp();
         }
 
         public override void ToonMenu()
         {
-
             bool doorgaan = true;
 
             while (doorgaan)
@@ -41,12 +37,9 @@ namespace Villas_Nexus.Models
                 for (int i = 0; i < artiesten.Count; i++)
                 {
                     Console.WriteLine((i + 1) + ". " + artiesten[i].Naam);
-                    
                 }
 
                 Console.WriteLine($"{artiesten.Count + 1}. Terug");
-
-
 
                 Console.Write("\nMaak een keuze: ");
                 int keuze = int.Parse(Console.ReadLine());
@@ -61,66 +54,34 @@ namespace Villas_Nexus.Models
                 Artiest gekozenArtiest = artiesten[keuze - 1];
 
                 ToonTitel("");
-                Console.WriteLine($"Kies een genre voor {gekozenArtiest.Naam}({gekozenArtiest.GeefGenreNamen()}):");
-                
-                Console.WriteLine("1. Rock");
-                Console.WriteLine("2. Pop");
-                Console.WriteLine("3. Hip-Hop");
+                Console.WriteLine($"Kies een genre voor {gekozenArtiest.Naam} :");
+
+                for (int i = 0; i < genres.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {genres[i].Naam}");
+                }
 
                 Console.Write("\nMaak een keuze: ");
                 string genreKeuze = Console.ReadLine();
 
-                switch (genreKeuze)
+                Genre gekozenGenre = genres[int.Parse(genreKeuze) - 1];
+
+                if (genreRepository.VoegGenreToeAanArtiest(gekozenArtiest.ArtiestID, gekozenGenre.GenreID))
                 {
-                    case "1":
-                        
-
-                        if (!gekozenArtiest.VoegGenreToe(rock))
-                        {
-                            Console.WriteLine("Dit genre is al toegevoegd aan deze artiest.");
-                        }
-                        break;
-
-                    case "2":
-                        
-
-                        if (!gekozenArtiest.VoegGenreToe(pop))
-                        {
-                            Console.WriteLine("Dit genre is al toegevoegd aan deze artiest.");
-                        }
-                        break;
-
-                    case "3":
-                        
-
-                        if (!gekozenArtiest.VoegGenreToe(hiphop))
-                        {
-                            Console.WriteLine("Dit genre is al toegevoegd aan deze artiest.");
-                        }
-
-                        break;
-
-                    default:
-                        Console.WriteLine("Ongeldige keuze.");
-                        break;
+                    Console.WriteLine("Genre toegevoegd.");
+                }
+                else
+                {
+                    Console.WriteLine("Dit genre is al toegevoegd.");
                 }
 
-                Console.WriteLine("\nGenres van " + gekozenArtiest.Naam + ":");
-
-                foreach (Genre genre in gekozenArtiest.GeefGenres())
-                {
-                    Console.WriteLine("- " + genre.Naam);
-                }
-
-                Console.WriteLine("\nDruk op Spatie om terug te gaan");
-
+                Console.WriteLine("\nDruk op een toets om terug te gaan");
                 Console.ReadKey();
-
             }
-
-            
-
-            
         }
+
+
+
+
     }
 }
