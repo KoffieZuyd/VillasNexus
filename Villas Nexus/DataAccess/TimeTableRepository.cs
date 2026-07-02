@@ -13,11 +13,11 @@ namespace Villas_Nexus.DataAcces
 
             try
             {
-                DatabaseConnection.MaakVerbinding();
+                DBConnector.MaakVerbinding();
 
                 string query = "SELECT * FROM timetable ORDER BY Dag, StartTijd";
 
-                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
+                using (SqlCommand command = new SqlCommand(query, DBConnector.connectionString))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -38,7 +38,7 @@ namespace Villas_Nexus.DataAcces
             }
             finally
             {
-                DatabaseConnection.SluitVerbinding();
+                DBConnector.SluitVerbinding();
             }
 
             return timetableLijst;
@@ -48,14 +48,14 @@ namespace Villas_Nexus.DataAcces
         {
             try
             {
-                DatabaseConnection.MaakVerbinding();
+                DBConnector.MaakVerbinding();
 
                 string query = @"INSERT INTO timetable 
                                 (Artiest, Dag, StartTijd, EindTijd, Podium, Plaats)
                                 VALUES 
                                 (@Artiest, @Dag, @StartTijd, @EindTijd, @Podium, @Plaats)";
 
-                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
+                using (SqlCommand command = new SqlCommand(query, DBConnector.connection String))
                 {
                     command.Parameters.AddWithValue("@Artiest", timetable.Artiest);
                     command.Parameters.AddWithValue("@Dag", timetable.Dag);
@@ -69,7 +69,7 @@ namespace Villas_Nexus.DataAcces
             }
             finally
             {
-                DatabaseConnection.SluitVerbinding();
+                DBConnector.SluitVerbinding();
             }
         }
 
@@ -77,11 +77,11 @@ namespace Villas_Nexus.DataAcces
         {
             try
             {
-                DatabaseConnection.MaakVerbinding();
+                DBConnector.MaakVerbinding();
 
                 string query = "DELETE FROM timetable WHERE Id = @Id";
 
-                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
+                using (SqlCommand command = new SqlCommand(query, DBConnector.connectionString))
                 {
                     command.Parameters.AddWithValue("@Id", id);
 
@@ -92,8 +92,11 @@ namespace Villas_Nexus.DataAcces
             }
             finally
             {
-                DatabaseConnection.SluitVerbinding();
+                DBConnector.SluitVerbinding();
             }
         }
     }
 }
+
+
+
