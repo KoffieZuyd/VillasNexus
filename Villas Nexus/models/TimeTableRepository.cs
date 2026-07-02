@@ -10,11 +10,11 @@ namespace Villas_Nexus.Models
 {
         public class TimetableRepository
         {
-            private DatabaseConnection databaseConnection;
+            private DBConnector DBConnector;
 
             public TimetableRepository()
             {
-                databaseConnection = new DatabaseConnection();
+                DBConnector = new DBConnector();
             }
 
             public List<Timetable> HaalAlleOptredensOp()

@@ -9,13 +9,13 @@ using Villas_Nexus.Models;
 
 namespace Villas_Nexus.Models
 {
-    public class DatabaseConnection
+    public class DBConnector
     {
         public static SqlConnection connectionString { get; private set; }
 
         public static void MaakVerbinding()
         {
-            connectionString = new SqlConnection("Server = LAPTOP-R7RD465K; Database = Vallis_Nexus_DB; Uid = VallisNexus-Main; Pwd = VNMain2026");
+            connectionString = new SqlConnection("Server = 20.86.62.20,1433; Database = Vallis_Nexus_DB; Uid = VallisNexus-Main; Pwd = VNMain2026");
             connectionString.Open();
         }
 
