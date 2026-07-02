@@ -29,6 +29,8 @@ namespace Villas_Nexus.Models
 
                 case "2":
                     Console.WriteLine("Artiesten indelen op genre");
+                    Menu genreMenu = new GenreMenu();
+                    genreMenu.ToonMenu();
                     break;
 
                 case "3":
