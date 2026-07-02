@@ -27,7 +27,7 @@ namespace Villas_Nexus.Models
                     return;
                 }
 
-                Console.WriteLine("\n0. Exit");
+                Console.WriteLine("\n0. Terug");
                 Console.Write("\nKies een werkzaamheid: ");
                 string invoer = Console.ReadLine();
 
