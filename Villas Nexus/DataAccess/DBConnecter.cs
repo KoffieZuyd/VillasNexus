@@ -15,7 +15,7 @@ namespace Villas_Nexus.Models
 
         public static void MaakVerbinding()
         {
-            connectionString = new SqlConnection("Server = LAPTOP-R7RD465K; Database = Vallis_Nexus_DB; Uid = VallisNexus-Main; Pwd = VNMain2026");
+            connectionString = new SqlConnection("Server = 20.86.62.20,1433; Database = Vallis_Nexus_DB; Uid = VallisNexus-Main; Pwd = VNMain2026");
             connectionString.Open();
             
         }

@@ -13,11 +13,6 @@ namespace Villas_Nexus
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine();
-            HoofdMenu menu = new HoofdMenu();
-            menu.ToonMenu();
-
             // voor database connection test/template
             DatabaseConnection.MaakVerbinding();
 
@@ -31,7 +26,13 @@ namespace Villas_Nexus
                 naam = DBtestReader.GetString(0);
                 genre = DBtestReader.GetString(1);
                 Console.WriteLine($"{naam} {genre}");
-            } 
+            }
+
+            Console.WriteLine();
+            HoofdMenu menu = new HoofdMenu();
+            menu.ToonMenu();
+
+
         }   
     }
 }
