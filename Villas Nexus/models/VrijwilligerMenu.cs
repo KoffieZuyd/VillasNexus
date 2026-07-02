@@ -19,7 +19,7 @@ namespace Villas_Nexus.Models
                 Console.WriteLine("1. Openstaande werkzaamheden");
                 Console.WriteLine("2. Afgeronde werkzaamheden");
                 Console.WriteLine("3. Staff info");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Terug");
 
                 Console.Write("\nMaak een keuze: ");
                 string keuze = Console.ReadLine();
