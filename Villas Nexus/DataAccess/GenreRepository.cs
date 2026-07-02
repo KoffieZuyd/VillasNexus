@@ -13,11 +13,11 @@ namespace Villas_Nexus.DataAcces
 
             try
             {
-                DatabaseConnection.MaakVerbinding();
+                DBConnector.MaakVerbinding();
 
                 string query = "SELECT * FROM Genre";
 
-                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
+                using (SqlCommand command = new SqlCommand(query, DBConnector.connectionString))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -33,7 +33,7 @@ namespace Villas_Nexus.DataAcces
             }
             finally
             {
-                DatabaseConnection.SluitVerbinding();
+                DBConnector.SluitVerbinding();
             }
 
             return genres;
@@ -43,7 +43,7 @@ namespace Villas_Nexus.DataAcces
         {
             try
             {
-                DatabaseConnection.MaakVerbinding();
+                DBConnector.MaakVerbinding();
 
                 string query = @"
                 IF NOT EXISTS (
@@ -57,7 +57,7 @@ namespace Villas_Nexus.DataAcces
                     VALUES (@ArtiestId, @GenreId)
                 END";
 
-                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
+                using (SqlCommand command = new SqlCommand(query, DBConnector.connectionString))
                 {
                     command.Parameters.AddWithValue("@ArtiestId", artiestId);
                     command.Parameters.AddWithValue("@GenreId", genreId);
@@ -69,7 +69,7 @@ namespace Villas_Nexus.DataAcces
             }
             finally
             {
-                DatabaseConnection.SluitVerbinding();
+                DBConnector.SluitVerbinding();
             }
         }
     }

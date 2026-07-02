@@ -13,11 +13,11 @@ namespace Villas_Nexus.DataAcces
 
             try
             {
-                DatabaseConnection.MaakVerbinding();
+                DBConnector.MaakVerbinding();
 
                 string query = "SELECT * FROM Artiest";
 
-                using (SqlCommand command = new SqlCommand(query, DatabaseConnection.connectionString))
+                using (SqlCommand command = new SqlCommand(query, DBConnector.connectionString))
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -35,7 +35,7 @@ namespace Villas_Nexus.DataAcces
             }
             finally
             {
-                DatabaseConnection.SluitVerbinding();
+                DBConnector.SluitVerbinding();
             }
 
             return artiesten;

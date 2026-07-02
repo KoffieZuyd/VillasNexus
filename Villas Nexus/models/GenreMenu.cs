@@ -86,5 +86,4 @@ namespace Villas_Nexus.Models
 
 
     }
-    }
 }
