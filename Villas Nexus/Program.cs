@@ -13,26 +13,10 @@ namespace Villas_Nexus
     {
         static void Main(string[] args)
         {
-            // voor database connection test/template
-            DBConnector.MaakVerbinding();
-
-            string naam = "";
-            string genre = "";
-
-            SqlCommand DBtest = new SqlCommand("SELECT naam, genre FROM dbo.ARTIEST", DBConnector.connectionString);
-            var DBtestReader = DBtest.ExecuteReader();
-            while (DBtestReader.Read())
-            {
-                naam = DBtestReader.GetString(0);
-                genre = DBtestReader.GetString(1);
-                Console.WriteLine($"{naam} {genre}");
-            }
 
             Console.WriteLine();
             HoofdMenu menu = new HoofdMenu();
             menu.ToonMenu();
-
-
-        }   
+        }
     }
 }
