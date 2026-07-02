@@ -27,8 +27,21 @@ namespace Villas_Nexus.Models
                     return;
                 }
 
+                Console.WriteLine("\n0. Exit");
                 Console.Write("\nKies een werkzaamheid: ");
-                int keuze = Convert.ToInt32(Console.ReadLine());
+                string invoer = Console.ReadLine();
+
+                if (invoer == "0")
+                {
+                    return;
+                }
+
+                if (!int.TryParse(invoer, out int keuze))
+                {
+                    Console.WriteLine("Ongeldige invoer!");
+                    Console.ReadKey();
+                    continue;
+                }
 
                 if (keuze >= 1 && keuze <= VrijwilligerWerkzaamheden.OpenstaandeWerkzaamheden.Count)
                 {
