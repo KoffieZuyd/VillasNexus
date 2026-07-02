@@ -7,9 +7,7 @@ namespace Villas_Nexus.Models
 {
     public class GenreMenu : Menu
     {
-        private Genre rock;
-        private Genre pop;
-        private Genre hiphop;
+       
 
         private List<Artiest> artiesten;
         private List<Genre> genres;
@@ -21,7 +19,7 @@ namespace Villas_Nexus.Models
         {
             artiestRepository = new ArtiestRepository();
             genreRepository = new GenreRepository();
-
+            
             artiesten = artiestRepository.HaalAlleArtiestenOp();
             genres = genreRepository.HaalAlleGenresOp();
         }
@@ -56,7 +54,7 @@ namespace Villas_Nexus.Models
                 Artiest gekozenArtiest = artiesten[keuze - 1];
 
                 ToonTitel("");
-                Console.WriteLine($"Kies een genre voor {gekozenArtiest.Naam}:");
+                Console.WriteLine($"Kies een genre voor {gekozenArtiest.Naam} :");
 
                 for (int i = 0; i < genres.Count; i++)
                 {
@@ -68,7 +66,7 @@ namespace Villas_Nexus.Models
 
                 Genre gekozenGenre = genres[int.Parse(genreKeuze) - 1];
 
-                if (genreRepository.VoegGenreToeAanArtiest(gekozenArtiest.Id, gekozenGenre.Id))
+                if (genreRepository.VoegGenreToeAanArtiest(gekozenArtiest.ArtiestID, gekozenGenre.GenreID))
                 {
                     Console.WriteLine("Genre toegevoegd.");
                 }

@@ -10,16 +10,16 @@ namespace Villas_Nexus.Models
     {
         public int ArtiestID { get; set; }
         public string Naam { get; set; }
-        public string Beschrijving { get; set; }
+        //public string Beschrijving { get; set; }
 
         private List<Genre> genres;
 
 
-        public Artiest(int artiestID, string naam, string beschrijving, List<Genre> genres)
+        public Artiest(int artiestID, string naam, List<Genre> genres)
         {
             ArtiestID = artiestID;
             Naam = naam;
-            Beschrijving = beschrijving;
+            //Beschrijving = beschrijving;
 
             this.genres = genres;
         }
@@ -44,23 +44,7 @@ namespace Villas_Nexus.Models
             return genres;
         }
 
-        public string GeefGenreNamen()
-        {
-            string resultaat = "";
-
-            foreach (Genre genre in genres)
-            {
-
-                if (resultaat != "")
-                {
-                    resultaat += ", ";
-                }
-
-                resultaat += genre.Naam;
-            }
-
-            return resultaat;
-        }
+        
 
     }
 

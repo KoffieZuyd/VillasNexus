@@ -23,9 +23,9 @@ namespace Villas_Nexus.DataAcces
                     while (reader.Read())
                     {
                         Artiest artiest = new Artiest(
-                            Convert.ToInt32(reader["Id"]),
+                            Convert.ToInt32(reader["artiestid"]),
                             reader["Naam"].ToString(),
-                            reader["Beschrijving"].ToString(),
+                            //reader["Beschrijving"].ToString(),
                             new List<Genre>()
                         );
 

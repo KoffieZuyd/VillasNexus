@@ -23,8 +23,8 @@ namespace Villas_Nexus.DataAcces
                     while (reader.Read())
                     {
                         Genre genre = new Genre(
-                            Convert.ToInt32(reader["Id"]),
-                            reader["Naam"].ToString()
+                            Convert.ToInt32(reader["genreid"]),
+                            reader["Naam"].ToString().Trim()
                         );
 
                         genres.Add(genre);
@@ -48,12 +48,12 @@ namespace Villas_Nexus.DataAcces
                 string query = @"
                 IF NOT EXISTS (
                     SELECT 1 
-                    FROM ArtiestGenre 
+                    FROM ARTIESTGENRE 
                     WHERE ArtiestId = @ArtiestId 
                     AND GenreId = @GenreId
                 )
                 BEGIN
-                    INSERT INTO ArtiestGenre (ArtiestId, GenreId)
+                    INSERT INTO ARTIESTGENRE (ArtiestId, GenreId)
                     VALUES (@ArtiestId, @GenreId)
                 END";
 

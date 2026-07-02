@@ -45,12 +45,17 @@
   <ItemGroup>
     <Compile Include="DataAccess\ArtiestRepository.cs" />
     <Compile Include="DataAccess\DBConnecter.cs" />
+    <Compile Include="DataAccess\FaciliteitRepository.cs" />
     <Compile Include="DataAccess\GenreRepository.cs" />
+    <Compile Include="DataAccess\PodiumRepository.cs" />
+    <Compile Include="DataAccess\TerreinRepository.cs" />
     <Compile Include="Models\Artiest.cs" />
+    <Compile Include="Models\Faciliteit.cs" />
     <Compile Include="Models\GenreMenu.cs" />
     <Compile Include="Models\HoofdMenu.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Podium.cs" />
     <Compile Include="Models\TerreinMenu.cs" />
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Models\VrijwilligerAfgerondeWerkzaamheden.cs" />
