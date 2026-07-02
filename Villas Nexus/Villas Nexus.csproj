@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\ArtiestRepository.cs" />
     <Compile Include="DataAccess\DBConnecter.cs" />
+    <Compile Include="DataAccess\GenreRepository.cs" />
     <Compile Include="Models\Artiest.cs" />
     <Compile Include="Models\GenreMenu.cs" />
     <Compile Include="Models\HoofdMenu.cs" />
