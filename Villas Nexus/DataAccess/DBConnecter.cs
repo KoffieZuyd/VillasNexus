@@ -9,7 +9,7 @@ using Villas_Nexus.Models;
 
 namespace Villas_Nexus.Models
 {
-    public class DatabaseConnection
+    public class DBConnector
     {
         public static SqlConnection connectionString { get; private set; }
 

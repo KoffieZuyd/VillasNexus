@@ -51,6 +51,7 @@
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\PlattegrondMenuBezoeker.cs" />
+    <Compile Include="Models\TerreinMenu.cs" />
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Models\TimeTableMenuBezoeker.cs" />
     <Compile Include="Models\VrijwilligerAfgerondeWerkzaamheden.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Models\Vrijwilliger_Login.cs" />
     <Compile Include="Models\OrganisatorMenu.cs" />
     <Compile Include="Models\zone.cs" />
+    <Compile Include="Models\Zone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

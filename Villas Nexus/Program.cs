@@ -14,12 +14,12 @@ namespace Villas_Nexus
         static void Main(string[] args)
         {
             // voor database connection test/template
-            DatabaseConnection.MaakVerbinding();
+            DBConnector.MaakVerbinding();
 
             string naam = "";
             string genre = "";
 
-            SqlCommand DBtest = new SqlCommand("SELECT naam, genre FROM dbo.ARTIEST", DatabaseConnection.connectionString);
+            SqlCommand DBtest = new SqlCommand("SELECT naam, genre FROM dbo.ARTIEST", DBConnector.connectionString);
             var DBtestReader = DBtest.ExecuteReader();
             while (DBtestReader.Read())
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Policy;
 
 namespace Villas_Nexus.Models
 {
@@ -43,10 +44,19 @@ namespace Villas_Nexus.Models
                     
                 }
 
+                Console.WriteLine($"{artiesten.Count + 1}. Terug");
+
+
+
                 Console.Write("\nMaak een keuze: ");
                 int keuze = int.Parse(Console.ReadLine());
 
-               
+                if (keuze == artiesten.Count + 1)
+                {
+                    Menu organisatorMenu = new OrganisatorMenu();
+                    organisatorMenu.ToonMenu();
+                    return;
+                }
 
                 Artiest gekozenArtiest = artiesten[keuze - 1];
 
