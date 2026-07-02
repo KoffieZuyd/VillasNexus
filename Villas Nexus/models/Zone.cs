@@ -8,7 +8,7 @@ namespace Villas_Nexus.Models
 {
     public class Zone
     {
-        public int ZoneId { get; private set; }
+        public int ZoneID { get; private set; }
         public string Naam { get; private set; }
         public string PodiumNaam { get; private set; }
         public int AantalToiletten { get; private set; }
@@ -16,7 +16,7 @@ namespace Villas_Nexus.Models
 
         public Zone(int zoneID, string naam)
         {
-            ZoneId = zoneID;
+            ZoneID = zoneID;
             Naam = naam;
         }
 
