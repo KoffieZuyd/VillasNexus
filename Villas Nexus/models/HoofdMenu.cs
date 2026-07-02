@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Villas_Nexus.Models;
 
 namespace Villas_Nexus.Models
 {
@@ -24,7 +25,8 @@ namespace Villas_Nexus.Models
             switch (keuze)
             {
                 case "1":
-                    Console.WriteLine("Bezoeker geselecteerd.");
+                    BezoekerMenu bezoekerMenu = new BezoekerMenu();
+                    bezoekerMenu.ToonMenu();
                     break;
 
                 case "2":

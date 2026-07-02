@@ -13,10 +13,12 @@ namespace Villas_Nexus
     {
         static void Main(string[] args)
         {
-            
+
             Console.WriteLine();
             HoofdMenu menu = new HoofdMenu();
             menu.ToonMenu();
+        }   
+
         }   
     }
 }
