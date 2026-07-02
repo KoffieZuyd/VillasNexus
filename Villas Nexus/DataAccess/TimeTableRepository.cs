@@ -55,7 +55,7 @@ namespace Villas_Nexus.DataAcces
                                 VALUES 
                                 (@Artiest, @Dag, @StartTijd, @EindTijd, @Podium, @Plaats)";
 
-                using (SqlCommand command = new SqlCommand(query, DBConnector.connection String))
+                using (SqlCommand command = new SqlCommand(query, DBConnector.connectionString))
                 {
                     command.Parameters.AddWithValue("@Artiest", timetable.Artiest);
                     command.Parameters.AddWithValue("@Dag", timetable.Dag);

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DBConnecter.cs" />
+    <Compile Include="DataAccess\VrijwilligerRepository.cs" />
     <Compile Include="Models\Artiest.cs" />
     <Compile Include="Models\BezoekerMenu.cs" />
     <Compile Include="Models\GenreMenu.cs" />

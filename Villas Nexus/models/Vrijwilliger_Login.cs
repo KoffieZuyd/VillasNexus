@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Villas_Nexus.DataAcces;
 
 namespace Villas_Nexus.Models
 {
@@ -10,10 +11,9 @@ namespace Villas_Nexus.Models
     {
         public void Login()
         {
-            string code = "VN2026";
+            VrijwilligerRepository repository = new VrijwilligerRepository();
 
-            bool isLoggedIn = false;
-            while (!isLoggedIn)
+            while (true)
             {
                 Console.Clear();
                 Console.WriteLine("Vrijwilliger Login\n");
@@ -21,15 +21,17 @@ namespace Villas_Nexus.Models
                 Console.Write("Voer logincode in: ");
                 string invoer = Console.ReadLine();
 
-                if (invoer == code)
+                string ingelogdeNaam = repository.ControleerLogincode(invoer);
+
+                if (ingelogdeNaam != null)
                 {
                     VrijwilligerMenu menu = new VrijwilligerMenu();
-                    menu.ToonMenu();
-                    isLoggedIn = true;
+                    menu.ToonMenu(ingelogdeNaam);
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine("Ongeldige code, druk spatie om opnieuw te proberen.");
+                    Console.WriteLine("\nOnjuiste logincode.");
                     Console.ReadKey();
                 }
             }

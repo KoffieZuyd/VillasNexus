@@ -8,13 +8,13 @@ namespace Villas_Nexus.Models
 {
     internal class VrijwilligerMenu
     {
-        public void ToonMenu()
+        public void ToonMenu(string naam)
         {
             while (true)
             {
                 Console.Clear();
 
-                Console.WriteLine("Vrijwilliger\n");
+                Console.WriteLine($"Welkom {naam}\n");
 
                 Console.WriteLine("1. Openstaande werkzaamheden");
                 Console.WriteLine("2. Afgeronde werkzaamheden");
@@ -40,12 +40,13 @@ namespace Villas_Nexus.Models
 
                     case "3":
                         Console.WriteLine("Hier komt de staff info.");
+                        Console.ReadKey();
                         break;
 
                     case "4":
                         HoofdMenu hoofdMenu = new HoofdMenu();
                         hoofdMenu.ToonMenu();
-                        break;
+                        return;
                 }
             }
         }
