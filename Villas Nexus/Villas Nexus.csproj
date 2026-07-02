@@ -51,7 +51,7 @@
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Models\VrijwilligerMenu.cs" />
-    <Compile Include="Models\TimeTableRepository.cs" />
+    <Compile Include="DataAccess\TimeTableRepository.cs" />
     <Compile Include="Models\Vrijwilliger_Login.cs" />
     <Compile Include="Models\OrganisatorMenu.cs" />
     <Compile Include="Program.cs" />
