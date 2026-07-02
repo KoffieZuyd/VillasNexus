@@ -17,6 +17,7 @@ namespace Villas_Nexus.Models
         {
             connectionString = new SqlConnection("Server = LAPTOP-R7RD465K; Database = Vallis_Nexus_DB; Uid = VallisNexus-Main; Pwd = VNMain2026");
             connectionString.Open();
+            
         }
 
         public static void SluitVerbinding()
