@@ -35,7 +35,7 @@ namespace Villas_Nexus.Models
                     break;
 
                 case "3":
-                    Console.WriteLine("Beschikbaarheid beheren");
+                    Console.WriteLine("Artiesten beschikbaarheid beheren");
                     break;
 
                 case "4":
