@@ -15,23 +15,51 @@ namespace Villas_Nexus.Models
         private List<Genre> genres;
 
 
-        public Artiest(int artiestID, string naam, string beschrijving)
+        public Artiest(int artiestID, string naam, string beschrijving, List<Genre> genres)
         {
             ArtiestID = artiestID;
             Naam = naam;
             Beschrijving = beschrijving;
 
-            genres = new List<Genre>();
+            this.genres = genres;
         }
 
-        public void VoegGenreToe(Genre genre)
+        public bool VoegGenreToe(Genre genre)
         {
+            foreach (Genre g in genres)
+            {
+                if (g.GenreID == genre.GenreID)
+                {
+                    return false; 
+                }
+            }
+
             genres.Add(genre);
+            return true; 
         }
 
         public List<Genre> GeefGenres()
         {
+            
             return genres;
+        }
+
+        public string GeefGenreNamen()
+        {
+            string resultaat = "";
+
+            foreach (Genre genre in genres)
+            {
+
+                if (resultaat != "")
+                {
+                    resultaat += ", ";
+                }
+
+                resultaat += genre.Naam;
+            }
+
+            return resultaat;
         }
 
     }
