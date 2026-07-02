@@ -10,7 +10,8 @@ namespace Villas_Nexus.Models
     {
         public void ToonMenu(string naam)
         {
-            while (true)
+            bool isRunning = true;
+            while (isRunning)
             {
                 Console.Clear();
 
@@ -30,17 +31,20 @@ namespace Villas_Nexus.Models
                         VrijwilligerOpenstaandeWerkzaamheden open =
                             new VrijwilligerOpenstaandeWerkzaamheden();
                         open.Werkzaamheden();
+                        isRunning = false;
                         break;
 
                     case "2":
                         VrijwilligerAfgerondeWerkzaamheden afgerond =
                             new VrijwilligerAfgerondeWerkzaamheden();
                         afgerond.ToonAfgerond();
+                        isRunning = false;
                         break;
 
                     case "3":
                         Console.WriteLine("Hier komt de staff info.");
                         Console.ReadKey();
+                        isRunning = false;
                         break;
 
                     case "4":
